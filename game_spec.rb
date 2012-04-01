@@ -9,5 +9,10 @@ describe Game do
       game.score.should == 0
     end
 
+    it "returns 0 before rolls" do
+      game = Game.new
+      game.score.should == 0
+    end
+
   end
 end
