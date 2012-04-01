@@ -45,6 +45,10 @@ describe Game do
       @game.frames.last.last.should == n
     end
 
+    it "raises an Exception if no more turns are allowed" do
+      expect{22.times.each{|n|@game.roll(10)}}.to raise_error(ArgumentError)
+    end
+
   end
 
   describe "#frames" do
@@ -56,6 +60,11 @@ describe Game do
     it "only has up to 10 frames" do
       20.times { @game.roll(0) }
       @game.frames.size.should <= 10
+    end
+
+    it "tracks the game's scores" do
+      21.times.each{|n|@game.roll(10)}
+      @game.frames.should == [[10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10, 10]]
     end
 
   end
