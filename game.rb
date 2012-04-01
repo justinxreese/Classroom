@@ -17,7 +17,10 @@ class Game
     end
     frame << pins
     @frames << frame
-    @score += pins
+  end
+
+  def score
+    @frames.flatten.inject{|sum,x| sum + x } || 0
   end
 
 end

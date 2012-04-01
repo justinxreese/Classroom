@@ -13,6 +13,11 @@ describe Game do
       @game.score.should == 0
     end
 
+    #it "returns 300 for a perfect game" do
+    #  21.times { @game.roll(10) }
+    #  @game.score.should == 300
+    #end
+
     it "returns 0 before rolls" do
       @game.score.should == 0
     end
@@ -64,7 +69,8 @@ describe Game do
 
     it "tracks the game's scores" do
       21.times.each{|n|@game.roll(10)}
-      @game.frames.should == [[10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10], [10, 10, 10]]
+      @game.frames.should == [[10, 10], [10, 10], [10, 10], [10, 10], [10, 10], 
+        [10, 10], [10, 10], [10, 10], [10, 10], [10, 10, 10]]
     end
 
   end
