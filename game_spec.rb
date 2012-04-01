@@ -23,4 +23,13 @@ describe Game do
     end
 
   end
+
+  describe "#roll" do
+
+    it "accepts integers" do
+      @game.roll(1)
+    end
+
+  end
+
 end
