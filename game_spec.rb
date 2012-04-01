@@ -42,7 +42,7 @@ describe Game do
     it "adds the score to a frame" do
       n = 3
       expect{@game.roll(n)}.to change{@game.frames.size}.by(1)
-      @game.frames.last.should == n
+      @game.frames.last.last.should == n
     end
 
   end
@@ -51,6 +51,11 @@ describe Game do
 
     it "returns an array of scores" do
       @game.frames.should be_a Array
+    end
+
+    it "only has up to 10 frames" do
+      20.times { @game.roll(0) }
+      @game.frames.size.should <= 10
     end
 
   end
