@@ -39,6 +39,12 @@ describe Game do
       expect{@game.roll(n)}.to change{@game.score}.by(n)
     end
 
+    it "adds the score to a frame" do
+      n = 3
+      expect{@game.roll(n)}.to change{@game.frames.size}.by(1)
+      @game.frames.last.should == n
+    end
+
   end
 
   describe "#frames" do

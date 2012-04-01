@@ -8,6 +8,7 @@ class Game
 
   def roll(pins)
     raise(ArgumentError,"Roll must be an integer",caller) unless pins.is_a?(Integer) 
+    @frames << pins
     @score += pins
   end
 
