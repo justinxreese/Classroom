@@ -1,16 +1,14 @@
 class Game
+  attr_accessor :frames,:score
 
   def initialize
-    @score = self.score
+    @score = 0
+    @frames = []
   end
 
   def roll(pins)
     raise(ArgumentError,"Roll must be an integer",caller) unless pins.is_a?(Integer) 
     @score += pins
-  end
-
-  def score
-    @score ||= 0
   end
 
 end

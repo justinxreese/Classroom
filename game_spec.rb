@@ -41,4 +41,12 @@ describe Game do
 
   end
 
+  describe "#frames" do
+
+    it "returns an array of scores" do
+      @game.frames.should be_a Array
+    end
+
+  end
+
 end
