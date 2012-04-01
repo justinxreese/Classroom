@@ -27,7 +27,11 @@ describe Game do
   describe "#roll" do
 
     it "accepts integers" do
-      @game.roll(1)
+      expect{@game.roll(1)}.to_not raise_error
+    end
+
+    it "raises an Exception if a non-integer is passed" do
+      expect{@game.roll('a')}.to raise_error(ArgumentError)
     end
 
   end
