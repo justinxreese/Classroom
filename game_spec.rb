@@ -34,6 +34,11 @@ describe Game do
       expect{@game.roll('a')}.to raise_error(ArgumentError)
     end
 
+    it "changes the Game's score" do
+      n = 1
+      expect{@game.roll(n)}.to change{@game.score}.by(n)
+    end
+
   end
 
 end
